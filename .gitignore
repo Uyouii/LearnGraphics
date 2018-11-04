@@ -1,0 +1,9 @@
+*.zip
+
+# VS
+Debug/
+Release/
+*.vcxproj
+*.vcxproj.fliters
+*.vcxproj.user
+.vs/
