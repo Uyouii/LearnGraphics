@@ -6,4 +6,4 @@ Release/
 *.vcxproj
 *.vcxproj.fliters
 *.vcxproj.user
-.vs/
+*.opendb
