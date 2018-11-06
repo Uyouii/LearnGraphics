@@ -4,6 +4,7 @@
 Debug/
 Release/
 *.vcxproj
-*.vcxproj.fliters
+*.vcxproj.filters
 *.vcxproj.user
 *.opendb
+.vs/
