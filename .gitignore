@@ -8,3 +8,5 @@ Release/
 *.vcxproj.user
 *.opendb
 .vs/
+*.db
+*.suo

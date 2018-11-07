@@ -24,6 +24,7 @@ const char *fragmentShaderSource = "#version 330 core\n"
 "}\n\0";
 
 int main() {
+
 	// glfw: initialize and configure
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
