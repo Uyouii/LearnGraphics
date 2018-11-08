@@ -3,9 +3,6 @@
 # VS
 Debug/
 Release/
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
 *.opendb
 *.suo
 ipch/
