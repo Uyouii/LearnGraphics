@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{D4FFA514-1A17-4972-BFB6-30CE109C064C}</ProjectGuid>
     <RootNamespace>FirstOpenGL</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -70,12 +70,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\projects\Uyouii git\LearnOpenGL\Library\Include\glfw3_include;E:\projects\Uyouii git\LearnOpenGL\Library\Include\glad_include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\projects\Uyouii git\LearnOpenGL\Library\Libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\Library\Include\glfw3_include;..\..\Library\Include\glad_include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Library\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\projects\Uyouii git\LearnOpenGL\Library\Include\glfw3_include;E:\projects\Uyouii git\LearnOpenGL\Library\Include\glad_include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\projects\Uyouii git\LearnOpenGL\Library\Libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\Library\Include\glfw3_include;..\..\Library\Include\glad_include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Library\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
