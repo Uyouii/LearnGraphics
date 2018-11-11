@@ -6,4 +6,5 @@ Release/
 *.opendb
 *.suo
 ipch/
+*.vs/
 
