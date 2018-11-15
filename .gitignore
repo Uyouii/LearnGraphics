@@ -7,4 +7,5 @@ Release/
 *.suo
 ipch/
 *.vs/
+x64/
 
