@@ -187,5 +187,4 @@ The **inverse** is
 $$
 S^{-1}(s) = S(1/s_x, 1/s_y, 1/s_z)
 $$
-
-
+A negative value on one or three of the components of s gives a type of **reﬂection matrix**, also called a **mirror matrix**. It should be noted that a rotation matrix concatenated with a reﬂection matrix is also a reﬂection matrix.
