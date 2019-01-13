@@ -253,7 +253,23 @@ Instead of multiplying by the matrix itself, the proper method is to use the **t
 
 ## Special Matrix Transforms and Operations
 
-### 4.2.1 The Euler Transform
+### The Euler Transform
 
-The Euler transform is the multiplication of three matrices, More formally, the transform, denoted E: $ E(h,p,r)=R_z(r)R_x(p)R_y(h) ​$
+The Euler transform is the multiplication of three matrices, More formally, the transform, denoted E: 
+$$
+E(h,p,r)=R_z(r)R_x(p)R_y(h)
+$$
 
+Since E is a concatenation of rotations, it is also clearly orthogonal(正交的). Therefore its inverse can be expressed as $E^{-1} = E^T = (R_zR_xR_y)^T = R_y^TR_x^TR_z^T$.
+
+The Euler angles h, p, and r represent in which order and how much the **head**, **pitch**, and **roll** should rotate around their respective axes.  Also, “**head**” is sometimes known as “**yaw**”. 
+
+![](D:\projects\Learn OpenGL\Real Time Rending Image\The Euler transform.PNG)
+
+#### Limitations
+
+It is difficult to work with two sets of Euler angles in combination.For example, interpolation between one set and another is not a simple matter of interpolating each angle. In fact, two diﬀerent sets of Euler angles can give the same orientation, so any interpolation should not rotate the object at all. 
+
+
+
+When you use Euler transforms, something called **gimbal lock** may occur. This happens when rotations are made so that one degree of freedom is lost.
