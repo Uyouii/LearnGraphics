@@ -189,7 +189,7 @@ To detect whether a given matrix reﬂects in some manner, compute the determina
 
 There are six basic shearing matrices, and they are denoted $ H_{xy}(s),H_{xz}(s),H_{yx}(s),H_{yz}(s),H_{zx}(s),H_{zy}(s), $
 
-![](D:\projects\Learn OpenGL\Real Time Rending Image\The eﬀect of shearing the unit square with H xz (s).PNG)
+![](https://github.com/Uyouii/LearnOpenGL/raw/master/Real%20Time%20Rending%20Image/The%20e%EF%AC%80ect%20of%20shearing%20the%20unit%20square%20with%20H%20xz%20(s).PNG)
 
 > The eﬀect of shearing the unit square with H xz (s). Both the y- and z-values are unaﬀected by the transform, while the x-value is the sum of the old x-value and s multiplied by the z-value, causing the square to become slanted. This transform is area-preserving, which can be seen in that the dashed areas are the same.
 $$
@@ -272,7 +272,7 @@ Since E is a concatenation of rotations, it is also clearly orthogonal(正交的
 
 The Euler angles h, p, and r represent in which order and how much the **head**, **pitch**, and **roll** should rotate around their respective axes.  Also, “**head**” is sometimes known as “**yaw**”. 
 
-![](D:\projects\Learn OpenGL\Real Time Rending Image\The Euler transform.PNG)
+![](https://github.com/Uyouii/LearnOpenGL/raw/master/Real%20Time%20Rending%20Image/The%20Euler%20transform.PNG)
 
 #### Limitations
 
@@ -281,3 +281,10 @@ It is difficult to work with two sets of Euler angles in combination.For example
 
 
 When you use Euler transforms, something called **gimbal lock** may occur. This happens when rotations are made so that one degree of freedom is lost.
+
+关于gimbal lock的通俗解释：
+
+> 是指物体的两个旋转轴指向同一个方向。实际上，当两个旋转轴平行时，我们就说万向节锁现象发生了，换句话说，绕一个轴旋转可能会覆盖住另一个轴的旋转，从而失去一维自由度
+
+> 通常说来，万向节锁发生在使用Eular Angles（欧拉角）的旋转操作中，原因是Eular Angles按照一定的顺序依次独立地绕轴旋转。让我们想象一个具体的旋转场景，首先物体先绕转X轴旋转，然后再绕Y轴，最后绕Z轴选择，从而完成一个旋转操作（飘飘白云译注：实际是想绕某一个轴旋转，然而Eular Angle将这个旋转分成三个独立的步骤进行），当你绕Y轴旋转90度之后万向节锁的问题就出现了，因为X轴已经被求值了，它不再随同其他两个轴旋转，这样X轴与Z轴就指向同一个方向（它们相当于同一个轴了）。
+
