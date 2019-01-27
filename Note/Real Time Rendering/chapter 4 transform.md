@@ -3,18 +3,95 @@
 
 # 线性代数基础
 
+## 向量
+
+### 向量点乘
+
+简写为：$a.b = \sum_{i=1}^{n}a_ib_i$
+$$
+\begin{bmatrix}
+a_1\\  a_2\\  ...\\  a_{n-1}\\ a_{n}\\
+\end{bmatrix} .
+\begin{bmatrix}
+b_1\\  b_2\\  ...\\  b_{n-1}\\ b_{n}\\
+\end{bmatrix} =
+a_1b_1 + a_2b_2 + ... + a_{n-1}b_{n-1} + a_nb_n
+$$
+
+#### 几何解释
+
+点乘结果描述了两个向量的“相似”程度，点乘结果越大，两个向量越接近。
+
+$a.b = \left \| a \right \| \left \| b \right \| cos\theta $
+
+![](D:\projects\Learn OpenGL\Real Time Rending Image\向量点乘.PNG)
+
+- a.b > 0 ,  $ 0 \leq \theta < 90$, a 和 b 同向
+-  a.b = 0 ,  $ \theta = 90$, a 和 b 正交
+- a.b < 0, $90 \leq \theta < 180$, a 和 b 反向
+
+### 向量叉乘
+
+叉乘公式为：
+$$
+\begin{bmatrix}
+x_1\\  y_1\\  z_1\\ 
+\end{bmatrix} \times
+\begin{bmatrix}
+x_2\\  y_2\\  z_2\\ 
+\end{bmatrix} =
+\begin{bmatrix}
+y_1z_2 - z_1y_2\\  
+z_1x_2 - x_1z_2\\  
+x_1y_2 - y_1x_2\\ 
+\end{bmatrix} 
+$$
+向量叉乘不满足交换律，但它满足反交换律：$a\times b = -(b \times a)$
+
+叉乘也不满足结合律： $(a \times b ) \times c \neq  a \times ( b \times c)$
+
+#### 几何解释
+
+叉乘得到的向量垂直于原来的两个向量:
+
+![](D:\projects\Learn OpenGL\Real Time Rending Image\向量叉乘.PNG)
+
+$\left\| a \times b \right\| = \left\| a \right\| \left\| b \right\| sin\theta$
+
+可以看到$\left\| a \times b \right\|$也等于 a 和 b 为两边的平行4边形的面积
+
+![](D:\projects\Learn OpenGL\Real Time Rending Image\叉乘和平行四边形面积.PNG)
+
+叉乘对零向量的解释为：它平行于任何其他向量，而点乘对零向量的解释为它和其他向量都垂直
+
+叉乘的方向则和左右手坐标系有关
+
+
+
 ## 矩阵
+
+### 矩阵的行列式
+
+矩阵M的行列式记作|M|
+
+矩阵行列式的一些性质：
+
+- 矩阵积的行列式等于矩阵行列式的积：|AB| = |A||B|
+- 矩阵转置的行列式等于原矩阵的行列式：$|M^T| = |M|$
+- 交换矩阵的任意两行或两列，行列式变负
+- 任意行或列的非零积加到另一行或列上不会改变行列式的值
+
+#### 几何解释
+
+2D中，行列式等于以基向量为两边的平行四边形的有符号面积
+
+3D中，行列式等于以变换后的基向量为三边的平行六面体的有符号体积
 
 ### 转置矩阵 Transposed matrix
 
 在线性代数中，矩阵A的转置是另一个矩阵 $A^T$，由下列等价动作建立：
 
 - 把A的横列写为$A^T$的纵列
-
-
-
-   
-
 - 把A的纵列写为$A^T$的横行
 
 形式上说，*m* × *n*矩阵*A*的转置是*n* × *m*矩阵:
@@ -23,15 +100,27 @@ $ A^T_{ij} = A_{ij} for 1 \leq i \leq n, 1 \leq j \leq m $
 
 注：$A^T$ (转置矩阵)与$A^{-1}$(逆矩阵)不同
 
-### 逆矩阵 Inverse matrix
+### 矩阵的逆 
+
+#### 逆矩阵 Inverse matrix
 
 在线性代数中，给定一个n阶方阵A，若存在一n阶方阵B，使得$AB=BA=I_n$，其中$I_n$为n阶单位矩阵，则称A是可逆的，且B是A的逆矩阵，记作 $A ^{-1} $。
 
 只有正方形（n×n）的矩阵，亦即方阵，才可能、但非必然有逆矩阵。
 
+矩阵的逆有一些重要的性质：
+
+- 单位矩阵的逆是它本身：$I^{-1} = I$
+- 矩阵转置的逆等于它的逆的转置: $(M^T)^{-1} = (M^{-1})^{T} $
+- 矩阵乘积的逆等于矩阵的逆的相反顺序的乘积: $(AB)^{-1} = B^{-1}A^{-1}$
+
+
+
 ### 正交矩阵 orthogonal matrix
 
-在矩阵论中，正交矩阵是一个方块矩阵Q，其元素为实数，而且行与列皆为正交的单位向量，使得该矩阵的转置矩阵为其逆矩阵：
+>  若方阵Q是正交的，当且仅当Q与它转置$Q^T$的乘积等于单位矩阵
+
+在矩阵论中，正交矩阵是一个方块矩阵Q，其元素为实数，而且行与列皆为正交的单位向量（即矩阵的每一行都是单位向量，矩阵的所有行互相垂直），使得该矩阵的转置矩阵为其逆矩阵：
 $$
 Q^T = Q^{-1} \Leftrightarrow Q^TQ = QQ^T = I
 $$
@@ -44,6 +133,10 @@ $$
 - 作为一个线性映射（变换矩阵），正交矩阵保持距离不变，所以它是一个[保距映射](https://zh.wikipedia.org/wiki/%E7%AD%89%E8%B7%9D%E5%90%8C%E6%9E%84)，具体例子为旋转与镜射
 - 行列式值为+1的正交矩阵，称为**特殊正交矩阵**，它是一个旋转矩阵
 - 行列式值为-1的正交矩阵，称为[瑕旋转](https://zh.wikipedia.org/wiki/%E7%91%95%E6%97%8B%E8%BD%89)矩阵。瑕旋转是旋转加上镜射。镜射也是一种瑕旋转。
+
+
+
+旋转和镜像矩阵都是正交的
 
 
 
@@ -284,7 +377,37 @@ When you use Euler transforms, something called **gimbal lock** may occur. This 
 
 关于gimbal lock的通俗解释：
 
+> 这种现象的原因是 角度为 $\pm90$的第二次旋转使得第一次和第三次的旋转角相同，称作 **万向锁**
+
 > 是指物体的两个旋转轴指向同一个方向。实际上，当两个旋转轴平行时，我们就说万向节锁现象发生了，换句话说，绕一个轴旋转可能会覆盖住另一个轴的旋转，从而失去一维自由度
 
 > 通常说来，万向节锁发生在使用Eular Angles（欧拉角）的旋转操作中，原因是Eular Angles按照一定的顺序依次独立地绕轴旋转。让我们想象一个具体的旋转场景，首先物体先绕转X轴旋转，然后再绕Y轴，最后绕Z轴选择，从而完成一个旋转操作（飘飘白云译注：实际是想绕某一个轴旋转，然而Eular Angle将这个旋转分成三个独立的步骤进行），当你绕Y轴旋转90度之后万向节锁的问题就出现了，因为X轴已经被求值了，它不再随同其他两个轴旋转，这样X轴与Z轴就指向同一个方向（它们相当于同一个轴了）。
 
+
+
+## Qutaternions
+
+Quaternions are used to represent rotations and orientations. They are superior to both Euler angles and matrices in several ways. 
+
+一个四元数包含一个标量分量和一个3D向量分量。经常记标量分量为w，记向量分量为单一的v或分开的x，y，z。两种记法分别为[w,v] 和 [w,(x,y,z)]
+
+**Definition**: A quaternion $\hat{q}$ can be deﬁned in the following ways, all equivalent.
+
+$\hat{\textbf{q}} = (\textbf{q}_v, q_w) = iq_x + jq_y + kq_z + q_w = \textbf{q}_v + q_w$
+
+$\textbf{q}_v = iq_x + jq_y + kq_z = (q_x, q_y, q_z)$
+
+$i^2 = j^2 = k^2 = -1, jk = -kj = i, ki = -ik = j, ij = -ji = k$
+
+The variable $q_w$ is called the **real part** of a quaternion, $\hat{\textbf{q}} $. The imaginary part is $\textbf{q}_v ,$ and i, j, and k are called **imaginary units**.
+
+> 具体内容看real time rendering4.3 和 3D数学基础：图形与游戏开发 10.4
+
+
+
+#### 优缺点
+
+- 平滑插值。slerp和squad提供了方位间的平滑插值，没有其他方法能提供平滑插值。
+- 快速连接和角位移求逆。四元数叉乘能将角位移序列转换为单个角位移，用矩阵作同样的操作明显会慢一些。
+- 能和矩阵形式快速转换。四元数和矩阵间的转换比欧拉角与矩阵间的转换稍微快一点。
+- 仅用四个数。四元数包含4数，而矩阵用了9个数，比矩阵要“经济”的多。
