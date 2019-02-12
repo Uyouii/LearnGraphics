@@ -411,3 +411,41 @@ The variable $q_w$ is called the **real part** of a quaternion, $\hat{\textbf{q}
 - 快速连接和角位移求逆。四元数叉乘能将角位移序列转换为单个角位移，用矩阵作同样的操作明显会慢一些。
 - 能和矩阵形式快速转换。四元数和矩阵间的转换比欧拉角与矩阵间的转换稍微快一点。
 - 仅用四个数。四元数包含4数，而矩阵用了9个数，比矩阵要“经济”的多。
+
+
+
+## Vertex Blending
+
+**Vertex blending** has several other names, such as **linear-blend skinning**, **enveloping**, or **skeleton-subspace deformation**.
+
+**p** is the original vertex, and **u(t)** is the transformed vertex whose position depends on time t:
+
+$\textbf u(t) = \sum_{i = 0}^{n - 1}w_iB_i(t)M_i^{-1}p$, where $\sum_{i = 0}^{n - 1}w_i = 1, w_i  \ge 0$
+
+There are n bones inﬂuencing the position of **p**, which is expressed in world coordinates. The value w i is the weight of bone i for vertex **p**. The matrix $M_i$ transforms from the initial bone’s coordinate system to world coordinates.
+
+In practice, the matrices $B_i(t)$ and $M_i^{-1}$ are concatenated for each bone for each frame of animation, and each resulting matrix is used to transform the vertices. The vertex **p** is transformed by the diﬀerent bones’ concatenated matrices, and then blended using the weights $w_i$ — thus the name *vertex blending*.
+
+
+
+## Morphing
+
+Morphing involves solving two major problems, namely, the *vertex correspondence* problem and the *interpolation* problem. 
+
+we have a neutral model, *N* , and a set of diﬀerence poses, $D_i$ . Am orphed model *M* can then be obtained using the following formula:
+$$
+M = N + \sum_{i = 1}^kw_iD_i
+$$
+
+## Projection
+
+### Orthographic Projection
+
+A characteristic of an orthographic projection is that parallel lines remain parallel after the projection.When orthographic projection is used for viewing a scene, objects maintain the same size regardless of distance to the camera.
+
+### Perspective Projection
+
+Here, parallel lines are generally not parallel after projection; rather, they may converge to a single point at their extreme. Perspective more closely matches how we perceive the world, i.e., objects farther away are smaller.
+
+
+

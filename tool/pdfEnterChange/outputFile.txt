@@ -1,0 +1,1 @@
+First, we shall present an instructive derivation for a perspective projection matrix that projects onto a plane z = ? d, d > 0. We derive from world space to simplify un- derstanding of how the world-to-view conversion proceeds. This derivation is followed by the more conventional matrices used in, for example, OpenGL 
