@@ -1,7 +1,7 @@
-#ifndef SHADER_H
+ï»¿#ifndef SHADER_H
 #define SHADER_H
 
-#include <glad/glad.h>; // °üº¬gladÀ´»ñÈ¡ËùÓĞµÄ±ØĞëOpenGLÍ·ÎÄ¼ş
+#include <glad/glad.h>; // Â°Ã¼ÂºÂ¬gladÃ€Â´Â»Ã±ÃˆÂ¡Ã‹Ã¹Ã“ÃÂµÃ„Â±Ã˜ÃÃ«OpenGLÃÂ·ÃÃ„Â¼Ã¾
 
 #include <string>
 #include <fstream>
@@ -17,14 +17,14 @@ enum CheckType{
 class Shader {
 
 public:
-	// ³ÌĞòID
+	// ç¨‹åºID
 	unsigned int ID;
 
-	// ¹¹ÔìÆ÷¶ÁÈ¡²¢¹¹½¨×ÅÉ«Æ÷
+	// æ„é€ å™¨è¯»å–å¹¶æ„å»ºç€è‰²å™¨
 	Shader(const GLchar* vertexPath, const GLchar* fragmentPath);
-	// Ê¹ÓÃ/¼¤»î³ÌĞò
+	// ä½¿ç”¨/æ¿€æ´»ç¨‹åº
 	void use();
-	// uniform¹¤¾ßº¯Êı
+	// uniformå·¥å…·å‡½æ•°
 	void setBool(const std::string &name, bool value) const;
 	void setInt(const std::string &name, int value) const;
 	void setFloat(const std::string &name, float value) const;

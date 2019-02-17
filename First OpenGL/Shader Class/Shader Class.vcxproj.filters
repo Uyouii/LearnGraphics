@@ -28,10 +28,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.vs">
+    <None Include="shader.vert">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="shader.fs">
+    <None Include="shader.frag">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
