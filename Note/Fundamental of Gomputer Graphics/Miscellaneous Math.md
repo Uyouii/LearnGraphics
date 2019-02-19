@@ -31,3 +31,14 @@ which is called the discriminant of the quadratic equation. If D > 0, there are 
 
 ## Trigonometry
 
+### Angles
+
+An **angle** is deﬁned by the length of the arc segment it cuts out on the unit circle.A common convention is that the smaller arc length is used, and the sign of the angle is determined by the order in which the two half-lines are speciﬁed. 
+
+Each of these angles is *the length of the arc of the unit circle that is “cut” by the two directions*. 
+
+ The conversion between degrees and radians is
+$$
+degrees = \frac{180}{\pi}radians \\
+radians = \frac{\pi}{180}degrees \\
+$$
