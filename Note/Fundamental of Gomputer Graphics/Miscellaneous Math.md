@@ -83,13 +83,13 @@ sin A sin B = − (cos(A + B) − cos(A − B))/2 \\
 sin A cos B = (sin(A + B) + sin(A − B))/2 \\
 cos A cos B = (cos(A + B) + cos(A − B))/2 \\
 $$
-![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\Geometry for triangle laws.PNG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/Geometry%20for%20triangle%20laws.PNG)
 
 > Geometry for triangle laws
 
 The following identities are for arbitrary triangles with side lengths a, b, and c, each with an angle opposite it given by A, B, C, respectively 
 $$
-\frac{sinA}{a} = \frac{sinB}{b} = \frac{sinC}{c} 
+\frac{sinA}{a} = \frac{sinB}{b} = \frac{sinC}{c}
 $$
 
 $$
@@ -106,5 +106,19 @@ triangle area = $\frac{1}{4} \sqrt{(a + b + c)(-a + b + c)(a - b + c)(a + b - c)
 
 ## Vectors
 
+A **vector** describes a length and a direction.
+
+Two vectors are equal if they have the same length and direction even if we think of them as being located in different places
+
+ Vectors will be represented as bold characters, e.g., $\mathbf{a}$. 
+
+A vector’s length is denoted$\left \| a \right \| $. 
+
+A **unit vector** is any vector whose length is one. 
+
+The **zero vector** is the vector of zero length. The direction of the zero vector is undeﬁned.
 
 
+
+Vectors can be used to store an **offset**, also called a **displacement**. Vectors can also be used to
+store a **location**, another word for **position** or **point**. 
