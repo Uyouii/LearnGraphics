@@ -42,3 +42,69 @@ $$
 degrees = \frac{180}{\pi}radians \\
 radians = \frac{\pi}{180}degrees \\
 $$
+
+### Useful Identities
+
+**Shifting identities**
+$$
+sin( − A) = − sin A \\
+cos( − A) = cos A	\\
+tan( − A) = − tan A	\\
+sin(π/2 − A) = cos A \\
+cos(π/2 − A) = sin A \\
+tan(π/2 − A) = cot A 
+$$
+**Pythagorean identities**
+$$
+{sin}^2A + {cos}^2A = 1 \\
+{sec}^2A - {tan}^2A = 1 \\
+{csc}^2A - {cot}^2A = 1 \\
+$$
+**Addition and subtraction identities**
+$$
+sin(A + B) = sin A cos B + sin B cos A	\\
+sin(A − B) = sin A cos B − sin B cos A	\\
+sin(2A) = 2 sin A cos A	\\
+cos(A + B) = cos A cos B − sin A sin B	\\
+cos(A − B) = cos A cos B + sin A sin B	\\
+cos(2A) = {cos}^2A - {sin}^2A	\\
+tan(A + B) = \frac{tanA + tanB}{1 - tanAtanB} \\
+tan(A - B) = \frac{tanA - tanB}{1 + tanAtanB} \\
+tan(2A) = \frac{2tanA}{1 - {tan}^2A}
+$$
+**Half-angle identities**
+$$
+{sin}^2(A/2) = (1 - cosA) /2 \\
+{cos}^2(A/2) = (1 + cosA) / 2\\
+$$
+**Product identities**
+$$
+sin A sin B = − (cos(A + B) − cos(A − B))/2 \\
+sin A cos B = (sin(A + B) + sin(A − B))/2 \\
+cos A cos B = (cos(A + B) + cos(A − B))/2 \\
+$$
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\Geometry for triangle laws.PNG)
+
+> Geometry for triangle laws
+
+The following identities are for arbitrary triangles with side lengths a, b, and c, each with an angle opposite it given by A, B, C, respectively 
+$$
+\frac{sinA}{a} = \frac{sinB}{b} = \frac{sinC}{c} 
+$$
+
+$$
+c^2 = a^2 + b^2 - 2ab cosC
+$$
+
+$$
+\frac{a + b}{a - b} = \frac{tan(\frac{A + B}{2})}{tan(\frac{A - B}{2})}
+$$
+
+The area of a triangle can also be computed in terms of these side lengths:
+
+triangle area = $\frac{1}{4} \sqrt{(a + b + c)(-a + b + c)(a - b + c)(a + b - c)}$
+
+## Vectors
+
+
+
