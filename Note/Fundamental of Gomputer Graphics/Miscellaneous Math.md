@@ -122,3 +122,81 @@ The **zero vector** is the vector of zero length. The direction of the zero vect
 
 Vectors can be used to store an **offset**, also called a **displacement**. Vectors can also be used to
 store a **location**, another word for **position** or **point**. 
+
+### Vector Operations
+
+Two vectors are equal if and only if they have the same length and direction.  Two vectors are added according to the **parallelogram rule**(平行四边形定则). 
+
+vector addition is commutative: $\mathbf{a} + \mathbf{b} = \mathbf{b} + \mathbf{a}$
+
+subtraction: $\mathbf{b} - \mathbf{a} =- \mathbf{a} + \mathbf{b}$
+
+also: $\mathbf{a} + (\mathbf{b} - \mathbf{a}) = \mathbf{b}$
+
+### Cartesian Coordinates of a Vector
+
+a vector $\mathbf{a}$ might be represented as:
+$$
+\mathbf{a} = x_a\mathbf{x} + y_a\mathbf{y}
+$$
+where $x_a$ and $ y_a$ are the real Cartesian coordinates of the 2D vector **a**  
+
+by the Pythagorean theorem, the length of a is:
+$$
+\left \| \mathbf{a} \right \| = \sqrt{{x_a}^2 + {y_a}^2}
+$$
+By convention we write the coordinates of **a** either as an ordered pair $(x_a , y_a )$ or a column matrix:
+$$
+\mathbf{a} = 
+\begin{bmatrix}
+x_a \\
+y_a	\\
+\end{bmatrix}
+$$
+We will also occasion- ally write the vector as a row matrix, which we will indicate as $ \mathbf{a}^T$ :
+$$
+\mathbf{a}^T =
+\begin{bmatrix}
+x_a & y_a
+\end{bmatrix}
+$$
+
+### Dot Product
+
+The dot product of **a** and **b** is denoted **a · b** and is often called the *scalar* product because it returns a scalar. 
+$$
+\mathbf{a} . \mathbf{b} = \left \| \mathbf{a} \right \| \left \| \mathbf{b} \right \| cos\phi
+$$
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The dot product.PNG)
+
+> The dot product is related to length and angle and is one of the most important formulas in graphics.
+
+The most common use of the dot product in graphics programs is to compute the **cosine** of the angle between two vectors. 
+
+The dot product can also be used to ﬁnd the **projection** of one vector onto another. This is the length **a → b** of a vector a that is projected at right angles onto a vector **b** 
+$$
+\mathbf{a}→\mathbf{b} = \left \| \mathbf{a} \right \|cos\phi = \frac{\mathbf{a}.\mathbf{b}}{ \left \| \mathbf{b} \right \|}
+$$
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The projection of a onto b is a length found by Equation.PNG)
+
+>  The projection of a onto b is a length found by Equation
+
+The dot product obeys the familiar associative and distributive properties（结合律和分配律) we have in real arithmetic:
+$$
+\mathbf{a}.\mathbf{b} = \mathbf{b}.\mathbf{a} \\
+\mathbf{a} . (\mathbf{b} + \mathbf{c}) = \mathbf{a}.\mathbf{b} + \mathbf{a}.\mathbf{c} \\
+(k\mathbf{a}).\mathbf{b} = \mathbf{a}.(k\mathbf{b}) = k\mathbf{a}.\mathbf{b} \\
+$$
+If 2D vectors **a** and **b** are expressed in Cartesian coordinates, we can take ad- vantage of **x · x** = **y · y** = 1 and **x · y** = 0 to derive that their dot product is
+$$
+\mathbf{a}.\mathbf{b} = (x_a\mathbf{x} + y_a\mathbf{y}) . (x_b\mathbf{x} + y_b\mathbf{y}) \\
+= x_ax_b(\mathbf{x}.\mathbf{x}) + x_ay_b(\mathbf{x}.\mathbf{y}) + x_by_a(\mathbf{y}.\mathbf{x}) + y_ay_b(\mathbf{y}.\mathbf{y}) \\
+= x_ax_b + y_ay_b
+$$
+in 3D we can find:
+$$
+\mathbf{a}.\mathbf{b} = x_ax_b + y_ay_b + z_az_b
+$$
+
+### Cross Product
+
