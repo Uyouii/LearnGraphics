@@ -200,3 +200,60 @@ $$
 
 ### Cross Product
 
+The cross product **a** × **b** is usually used only for three-dimensional vectors; 
+
+The cross product returns a 3D vector that is perpendicular(垂直的) to the two arguments of the cross product.  The length of the resulting vector is related to $sin \phi$:
+$$
+\left \| \mathbf{a \times b} \right \| = \left \| \mathbf{a} \right \| \left \| \mathbf{b} \right \| sin\phi
+$$
+The magnitude$  \left \| \mathbf{a \times b} \right \|$ is equal to the area of the parallelogram(平行四边形) formed by vectors **a** and **b**. In addition, **a × b** is perpendicular(垂直的) to both **a** and **b**.
+
+it is standard to assume that
+$$
+\mathbf{z} = \mathbf{x} \times \mathbf{y}
+$$
+The cross product has the nice property that:
+$$
+\mathbf{a}\times\mathbf{b} =-( \mathbf{b}\times\mathbf{a} )\\
+\mathbf{a} \times (\mathbf{b} + \mathbf{c}) = \mathbf{a}\times\mathbf{b} + \mathbf{a}\times\mathbf{c} \\
+\mathbf{a}\times(k\mathbf{b}) = k(\mathbf{a}\times\mathbf{b}) \\
+$$
+In Cartesian coordinates, we can use an explicit expansion to compute the cross product:
+$$
+\mathbf{a} \times \mathbf{b} = \\
+(x_a\mathbf{x} + y_a\mathbf{y} + z_a\mathbf{z}) \times (x_b\mathbf{x} + y_b\mathbf{y} + z_b\mathbf{z}) = \\
+x_ax_b\mathbf{x} \times \mathbf{x} + 
+x_ay_b\mathbf{x} \times \mathbf{y} +
+x_az_b\mathbf{x} \times \mathbf{z} + \\
+y_ax_b\mathbf{y} \times \mathbf{x} + 
+y_ay_b\mathbf{y} \times \mathbf{y} + 
+y_az_b\mathbf{y} \times \mathbf{z} + \\
+z_ax_b\mathbf{z} \times \mathbf{x} + 
+z_ay_b\mathbf{z} \times \mathbf{y} +
+z_az_b\mathbf{z} \times \mathbf{z} = \\
+(y_az_b - z_ay_b)\mathbf{x} + (z_ax_b - x_az_b)\mathbf{y} + (x_ay_b - y_ax_b)\mathbf{z}
+$$
+so in coordinate form,
+$$
+\mathbf{a} \times \mathbf{b} = (y_az_b - z_ay_b, z_ax_b - x_az_b, x_ay_b - y_ax_b)
+$$
+
+
+## Curves and Surfaces
+
+### 2D Implicit Curves
+
+Intuitively, a **curve**(曲线) is a set of points that can be drawn on a piece of paper without lifting the pen. A common way to describe a curve is using an implicit equation. An **implicit equation** in two dimensions has the form
+$$
+f(x,y) = 0So you evaluate f to decide whether a point is “inside” a curve.
+$$
+So you evaluate f to decide whether a point is “inside” a curve. 
+
+### The 2D Gradient
+
+The gradient（梯度） vector ∇ f(x, y) is given by：
+$$
+∇f(x,y) = (\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y})
+$$
+The gradient vector evaluated at a point on the implicit curve f(x, y) = 0 is perpendicular(垂直) to the **tangent** (切线) vector of the curve at that point. This perpendicular vector is usually called the **normal** vector to the curve.
+
