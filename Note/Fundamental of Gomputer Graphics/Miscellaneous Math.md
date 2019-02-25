@@ -257,3 +257,27 @@ $$
 $$
 The gradient vector evaluated at a point on the implicit curve f(x, y) = 0 is perpendicular(垂直) to the **tangent** (切线) vector of the curve at that point. This perpendicular vector is usually called the **normal** vector to the curve.
 
+
+
+#### Implicit 2D Lines
+
+a more general form is often useful:
+
+$$
+Ax + By + C = 0, 
+$$
+for real numbers A, B, C.
+
+the distance from a point to the line is the length of the vector $k(A, B)$, which is
+$$
+distance = k \sqrt{A^2 + B^2} .
+$$
+For the point $(x, y) + k(A, B)$, the value of $f(x, y) = Ax + By + C$ is
+$$
+f(x + kA, y + kB) = Ax + kA^2+ By + kB^2 + C= k(A^2+ B^2).
+$$
+
+$$
+distance = \frac{f(a,b)}{\sqrt{A^2 + B^2}}
+$$
+
