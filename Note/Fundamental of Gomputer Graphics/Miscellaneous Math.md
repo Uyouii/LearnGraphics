@@ -281,3 +281,58 @@ $$
 distance = \frac{f(a,b)}{\sqrt{A^2 + B^2}}
 $$
 
+#### Implicit Quadric Curves
+
+If f is instead a quadratic function of x and y, with the general form
+$$
+Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0
+$$
+ Two-dimensional quadric curves include ellipses(椭圆) and hyperbolas(双曲线), as well as the special cases of parabolas(抛物线), circles(圆), and lines.
+
+Examples of quadric curves include the circle with center $x_c, y_c$ and radius r,
+$$
+(x - x_c)^2 + (y - y_c)^2 - r^2 = 0
+$$
+and axis-aligned ellipses of the form
+$$
+\frac{(x - x_c)^2}{a^2} + \frac{(y - y_c)^2}{b^2} - 1 = 0
+$$
+where$(x_c, y_c)$ is the center of the ellipse, and a and b are the minor and major semi-axes
+
+ ### 3D Implicit Surfaces
+
+implicit equations implicitly deﬁne a set of points that are on the surface:
+$$
+f(x,y,z) = 0
+$$
+Any point (x, y, z) that is on the surface results in zero when given as an argument to f. Any point not on the surface results in some number other than zero. 
+
+You can check whether a point is on the surface by evaluating f, or you can check which side of the surface the point lies on by looking at the sign of f, but you cannot always explicitly construct points on the surface. 
+
+Using vector notation, we will write such functions of $\mathbf{p} = (x, y, z)$ as
+$$
+f(p) = 0.
+$$
+
+### Surface Normal to an Implicit Surface
+
+A surface normal is a vector perpendicular to the surface. Each point on the surface may have a different normal vector.
+
+the surface normal at a point p on an implicit surface is given by the gradient of the implicit function:
+$$
+\mathbf{n} = ∇f(\mathbf{p}) = (\frac{\partial f(\mathbf{p})}{\partial x},\frac{\partial f(\mathbf{p})}{\partial y}, \frac{\partial f(\mathbf{p})}{\partial z} )
+$$
+The reasoning is the same as for the 2D case: the gradient points in the direction of fastest increase in f, which is perpendicular to all directions tangent to the surface,in which f remains constant. 
+
+The gradient vector points toward the side of the surface where f(p) > 0, 
+
+### Implicit Planes
+
+As an example, consider the inﬁnite plane through point a with surface normal n. The implicit equation to describe this plane is given by
+$$
+(\mathbf{p} - \mathbf{a}).\mathbf{n} = 0
+$$
+![](D:\projects\Learn OpenGL\Real Time Rending Image\Implicit Planes.PNG)
+
+> Any of the points p shown are in the plane with normal vector n that includes point a if Equation (2.2) is satisﬁed.
+
