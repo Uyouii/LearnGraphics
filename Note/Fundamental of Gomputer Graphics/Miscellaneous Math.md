@@ -378,3 +378,87 @@ $$
 
 ### 2D Parametric Curves
 
+A parametric curve is controlled by a single parameter that can be considered a sort of index that moves continuously along the curve. Such curves have the form、
+$$
+\begin{bmatrix}
+ x \\
+ y
+\end{bmatrix} = 
+\begin{bmatrix}
+g(t) \\
+ h(t)
+\end{bmatrix}
+$$
+Often we can write a parametric curve in vector form,
+$$
+\mathbf{p} = f(t)
+$$
+where f is a vector-valued function.
+
+#### 2D Parametric Lines
+
+A parametric line in 2D that passes through points $\mathbf{p_0} = (x_0, y_0)$ and $\mathbf{p_1} = (x_1, y_1)$ can be written as
+$$
+\begin{bmatrix}
+ x \\
+ y
+\end{bmatrix} = 
+\begin{bmatrix}
+x_0 + t(x_1 - x_0) \\
+y_0 + t(y_1 - y_0)
+\end{bmatrix}
+$$
+we can use the vector form for **p** = (x, y):
+$$
+\mathbf{p}(t) = \mathbf{p}_0 + t(\mathbf{p}_1 - \mathbf{p}_0)
+$$
+
+#### 2D Parametric Circles
+
+A circle with center$(x_c, y_c)$ and radius r has a parametric form:
+$$
+\begin{bmatrix}
+ x \\
+ y
+\end{bmatrix} = 
+\begin{bmatrix}
+x_c + rcos\phi \\
+y_c + rsin\phi
+\end{bmatrix}
+$$
+An axis-aligned ellipse can be constructed by scaling the x and y parametric equations separately:
+$$
+\begin{bmatrix}
+ x \\
+ y
+\end{bmatrix} = 
+\begin{bmatrix}
+x_c + acos\phi \\
+y_c + bsin\phi
+\end{bmatrix}
+$$
+
+### 3D Parametric Cureves
+
+A 3D parametric curve operates much like a 2D parametric curve:
+$$
+x = f(t),\\
+y = g(t),\\
+z = h(t),\\
+$$
+In vector form we can write
+$$
+\begin{bmatrix}
+ x \\
+ y \\
+ z
+\end{bmatrix} = \mathbf{p}(t)
+$$
+
+#### 3D Parametric Lines
+
+write it in vector form:
+$$
+\mathbf{p} = \mathbf{o} + t\mathbf{d}
+$$
+The way to visualize this is to imagine that the line passes through **o** and is parallel to **d**.
