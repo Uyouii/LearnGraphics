@@ -167,7 +167,7 @@ The dot product of **a** and **b** is denoted **a · b** and is often called the
 $$
 \mathbf{a} . \mathbf{b} = \left \| \mathbf{a} \right \| \left \| \mathbf{b} \right \| cos\phi
 $$
-![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The dot product.PNG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/The%20dot%20product.PNG)
 
 > The dot product is related to length and angle and is one of the most important formulas in graphics.
 
@@ -177,7 +177,7 @@ The dot product can also be used to ﬁnd the **projection** of one vector onto 
 $$
 \mathbf{a}→\mathbf{b} = \left \| \mathbf{a} \right \|cos\phi = \frac{\mathbf{a}.\mathbf{b}}{ \left \| \mathbf{b} \right \|}
 $$
-![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The projection of a onto b is a length found by Equation.PNG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/The%20projection%20of%20a%20onto%20b%20is%20a%20length%20found%20by%20Equation.PNG)
 
 >  The projection of a onto b is a length found by Equation
 
@@ -332,7 +332,49 @@ As an example, consider the inﬁnite plane through point a with surface normal 
 $$
 (\mathbf{p} - \mathbf{a}).\mathbf{n} = 0
 $$
-![](D:\projects\Learn OpenGL\Real Time Rending Image\Implicit Planes.PNG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/Implicit%20Planes.PNG)
 
 > Any of the points p shown are in the plane with normal vector n that includes point a if Equation (2.2) is satisﬁed.
+
+Sometimes we want the implicit equation for a plane through points a, b, and c. The normal to this plane can be found by taking the cross product of any two vectors in the plane. 
+
+One such cross product is
+$$
+\mathbf{n} = (\mathbf{b} - \mathbf{a}) \times (\mathbf{c} - \mathbf{a})
+$$
+This allows us to write the implicit plane equation:
+$$
+(\mathbf{p} - \mathbf{a}).((\mathbf{b} - \mathbf{a}) \times (\mathbf{c} - \mathbf{a})) = 0
+$$
+A geometric way to read this equation is that the volume of the parallelepiped deﬁned by **p** − **a**, **b** − **a**, and **c** − **a** is zero, i.e., they are coplanar(共平面的). 
+
+ The full-blown Cartesian representation for this is given by the determinant:
+$$
+\begin{vmatrix}
+x-x_a & y-y_a & z-z_a\\ 
+x_b-x_a & y_b-y_a & z_b-z_a\\ 
+x_c-x_a & y_c-y_a & z_c-z_a\\ 
+\end{vmatrix} = 0
+$$
+
+#### 3D Quadric Surfaces
+
+quadratic polynomials in x, y, and z deﬁne quadric surfaces in 3D. For instance, a sphere can be written as
+$$
+f(\mathbf{p}) = (\mathbf{p} - \mathbf{c})^2 - r^2 = 0
+$$
+and an axis-aligned ellipsoid may be written as
+$$
+f(\mathbf{p}) = \frac{(x - x_c)^2}{a^2} +  \frac{(y - y_c)^2}{b^2} +  \frac{(z - z_c)^2}{c^2} - 1 = 0
+$$
+
+#### 3D Curves from Implicit Surfaces
+
+A 3D curve can be constructed from the intersection of two simultaneous implicit equations:
+$$
+f(\mathbf{p}) = 0 \\
+g(\mathbf{p}) = 0
+$$
+
+### 2D Parametric Curves
 
