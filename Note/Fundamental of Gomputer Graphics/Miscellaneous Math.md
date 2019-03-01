@@ -462,3 +462,33 @@ $$
 \mathbf{p} = \mathbf{o} + t\mathbf{d}
 $$
 The way to visualize this is to imagine that the line passes through **o** and is parallel to **d**.
+
+### 3D Parametric Surfaces
+
+These surfaces have the form
+$$
+x = f(u,v), \\
+x = g(u,v), \\
+z = h(u,v), \\
+$$
+or, in vector form,
+$$
+\begin{bmatrix}
+ x \\
+ y \\
+ z
+\end{bmatrix} = \mathbf{p}(u,v)
+$$
+**spherical coordinates:**
+
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The geometry for spherical coordinates.PNG)
+$$
+x = rcos\phi sin\theta, \\
+y = rsin\phi sin\theta, \\
+z = rcos\theta
+$$
+We would also like to be able to ﬁnd the (θ, φ) for a given (x, y, z):
+$$
+\theta = acos(z/\sqrt{x^2 + y^2 + z^2}), \\
+\phi = atan2(y, x)
+$$
