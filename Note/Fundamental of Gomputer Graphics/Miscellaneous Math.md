@@ -481,7 +481,7 @@ $$
 $$
 **spherical coordinates:**
 
-![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The geometry for spherical coordinates.PNG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/The%20geometry%20for%20spherical%20coordinates.PNG)
 $$
 x = rcos\phi sin\theta, \\
 y = rsin\phi sin\theta, \\
@@ -492,3 +492,18 @@ $$
 \theta = acos(z/\sqrt{x^2 + y^2 + z^2}), \\
 \phi = atan2(y, x)
 $$
+
+Consider the function $ \mathbf{q}(t) = \mathbf{p}(t, v_0 )$.This function deﬁnes a parametric curve obtained by varying u while holding v ﬁxed at the value $v_0$.  This curve, called an **isoparametric** curve lies in the surface.
+
+The derivative of q gives a vector tangent to the curve, and since the curve lies in the surface the vector ${\mathbf{q}}'$ also lies in the surface. Since it was obtained by varying one argument of **p**, the vector ${\mathbf{q}}'$ s the partial derivative of p with respect to u, which we’ll denote $p_u$ . A similar argument shows that the partial derivative
+$p_v$ gives the tangent to the isoparametric curves for constant u, which is a second tangent vector to the surface.
+
+since both are tangent to the surface, their cross product, which is perpendicular to both tangents, is normal to the surface.
+$$
+\mathbf{n} = \mathbf{p}_u \times \mathbf{p}_v
+$$
+
+## Linear Interpolation
+
+an example of linear interpolation of position to form line segments in 2D and 3D, where two points **a** and **b** are associated with a parameter t to form the line $\mathbf{p} = (1 − t)\mathbf{a} + t\mathbf{b}$. 
+
