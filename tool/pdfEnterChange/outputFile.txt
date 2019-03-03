@@ -1,1 +1,1 @@
-The gradient vector evaluated at a point on the implicit curve f(x, y) = 0 is perpendicular to the tangent vector of the curve at that point. This perpendicular vector is usually called the normal vector to the curve. I
+light re?ected (as opposed to absorbed) as a function of position on a piece of pa- per. So in the physical world, images are functions de?ned over two-dimensional areas¡ªalmost always rectangles. So we can abstract an image as a function
