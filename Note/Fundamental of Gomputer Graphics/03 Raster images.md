@@ -125,3 +125,14 @@ Or the information can be stored as a fourth channel in an RGB image, in which c
 ### Image Storage
 
 Most RGB image formats use eight bits for each of the red, green, and blue channels. 
+
+To reduce the storage requirement, most image formats allow for some kind of compression.At a high level, such compression is either ***lossless***(无损的) or ***lossy***(有损的).
+
+Popular image storage formats include:
+
+- **jpeg**. This lossy format compresses image blocks based on thresholds in the human visual system. This format works well for natural images.
+- **tiff**. This format is most commonly used to hold binary images or losslessly compressed 8- or 16-bit RGB although many other options exist.
+- **ppm**.  This very simple lossless, uncompressed format is most often used for 8-bit RGB images although many options exist.
+- **png**. This is a set of lossless formats with a good set of open source management tools.
+
+ 
