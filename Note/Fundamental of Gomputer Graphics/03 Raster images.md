@@ -102,6 +102,25 @@ $$
 $$
 where M is the maximum intensity.
 
+## RGB Color
+
+Most computer graphics images are deﬁned in terms of red-green-blue (RGB) color.
+
+The basic idea of RGB color space is that the color is displayed by mixing three ***primary*** lights: one red, one green, and one blue. The lights mix in an ***additive*** manner.
+
+In RGB additive color mixing we have:
+
+- read +  green = yellow
+- green + blue = cyan
+- blue + red = magenta
+- red + green + blue = white
+
+![](D:\projects\Learn OpenGL\Real Time Rending Image\The additive mixing rules for colors red green blue..PNG)
+
+> The additive mixing rules for colors red/green/blue.
+
+
+
 ## Alpha Compositing
 
 Often we would like to only partially overwrite the contents of a pixel. A common example of this occurs in ***compositing***, where we have a background and want to insert a foreground image over it.
