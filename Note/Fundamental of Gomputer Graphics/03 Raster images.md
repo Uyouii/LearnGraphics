@@ -115,7 +115,7 @@ In RGB additive color mixing we have:
 - blue + red = magenta
 - red + green + blue = white
 
-![](D:\projects\Learn OpenGL\Real Time Rending Image\The additive mixing rules for colors red green blue..PNG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/The%20additive%20mixing%20rules%20for%20colors%20red%20green%20blue..PNG)
 
 > The additive mixing rules for colors red/green/blue.
 
