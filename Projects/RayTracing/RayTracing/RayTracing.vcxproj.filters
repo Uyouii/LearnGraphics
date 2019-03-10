@@ -21,9 +21,12 @@
     <ClInclude Include="stb_image_write.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1 out_an_image.cpp">
+    <ClCompile Include="2 the vec3 class.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
