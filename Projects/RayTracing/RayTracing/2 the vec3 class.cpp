@@ -23,6 +23,6 @@ int main() {
 			data[index + 2] = ib;
 		}
 	}
-	stbi_write_jpg("images/2 the vec3 class.jpg", nx, ny, n, data, 50);
+	stbi_write_jpg("images/2 the vec3 class.jpg", nx, ny, n, data, 100);
 	system("pause");
 }

@@ -24,9 +24,12 @@
     <ClInclude Include="vec3.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2 the vec3 class.cpp">
+    <ClCompile Include="3 rays, a simple camera and background.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
