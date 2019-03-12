@@ -61,7 +61,7 @@ A surprising fact about perspective is that all the rules of perspective drawing
 
 A ray is really just an origin point and a propagation direction; a 3D parametric line is ideal for this. 
 
-![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The ray from the eye to a point on the image plane..PNG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/The%20ray%20from%20the%20eye%20to%20a%20point%20on%20the%20image%20plane..PNG)
 
 the 3D parametric line from the eye e to a point s on the image plane (Figure 4.6) is given by 
 $$
@@ -75,10 +75,31 @@ Note that **p**(0) = **e**, and **p**(1) = **s**, and more generally, if 0 < $t_
 
 All of our ray-generation methods start from an orthonormal coordinate frame known as the ***camera frame***,  which we’ll denote by **e**, for the *eye point*, or *view- point*, and **u**, **v**, and **w** for the three basis vectors, organized with **u** pointing rightward (from the camera’s view), **v** pointing upward, and **w** pointing backward, so that { **u**, **v**, **w** } forms a right-handed coordinate system.
 
-![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The vectors of the camera frame, together with the view direction and up direction..PNG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/The%20vectors%20of%20the%20camera%20frame%2C%20together%20with%20the%20view%20direction%20and%20up%20direction..PNG)
 
 > Since **v** and **w** have to be perpendicular, the up vector and **v** are not generally the same. But setting the up vector to point straight upward in the scene will orient the camera in the way we would think of as “upright.”
 
 ### Orthographic Views
 
-For an orthographic view, all the rays will have the direction$ −\mathbf{w}​$. 
+For an orthographic view, all the rays will have the direction$ −\mathbf{w}$. 
+
+The viewing rays should start on the plane deﬁned by the point e and the vectors u and v; the only remaining information required is where on the plane the image is supposed to be. 
+
+We’ll deﬁne the image dimensions with four numbers, for the four sides of the image: l and r are the positions of the left and right edges of the image, as measured from e along the **u** direction; and b and t are the positions of the bottom and top edges of the image, as measured from e along the **v** direction.
+
+to fit an image with $n_x \times n_y$ pixels into a rectangle of size (r- l) x (t - b), the pixel at position (i, j) in the raster image has the position
+$$
+u = l + (r - l)( i + 0.5) / nx, \\
+v = b + (t - b)(j + 0.5) / ny, \\
+$$
+In an orthographic view, we can simply use the pixel’s image-plane position as the ray’s starting point, and we already know the ray’s direction is the view direction. The procedure for generating orthographic viewing rays is then:
+
+```
+compute u and v
+ray.direction <-- -W
+ray.origin <-- E + u U + v V
+```
+
+It’s very simple to make an oblique parallel view: just allow the image plane normal **w** to be speciﬁed separately from the view direction **d**. The procedure is then exactly the same, but with **d** substituted for − **w**. Of course w is still used to construct **u** and **v**.
+
+![](D:\projects\Learn OpenGL\Real Time Rending Image\Ray generation using the camera frame.JPG)

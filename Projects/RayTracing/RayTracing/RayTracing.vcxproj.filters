@@ -29,7 +29,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="3 rays, a simple camera and background.cpp">
+    <ClCompile Include="4 Adding a sphere.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
