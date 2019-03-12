@@ -73,3 +73,12 @@ Note that **p**(0) = **e**, and **p**(1) = **s**, and more generally, if 0 < $t_
 
 > These facts will be useful when we search for the closest object hit by the ray that is not behind the eye.
 
+All of our ray-generation methods start from an orthonormal coordinate frame known as the ***camera frame***,  which we’ll denote by **e**, for the *eye point*, or *view- point*, and **u**, **v**, and **w** for the three basis vectors, organized with **u** pointing rightward (from the camera’s view), **v** pointing upward, and **w** pointing backward, so that { **u**, **v**, **w** } forms a right-handed coordinate system.
+
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The vectors of the camera frame, together with the view direction and up direction..PNG)
+
+> Since **v** and **w** have to be perpendicular, the up vector and **v** are not generally the same. But setting the up vector to point straight upward in the scene will orient the camera in the way we would think of as “upright.”
+
+### Orthographic Views
+
+For an orthographic view, all the rays will have the direction$ −\mathbf{w}​$. 
