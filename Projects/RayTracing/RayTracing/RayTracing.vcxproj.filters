@@ -33,9 +33,15 @@
     <ClInclude Include="sphere.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="hitable_list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="5 Surface normals and multiple objects.cpp">
+    <ClCompile Include="7 Diffuse Materials.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -115,7 +115,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
     <ClInclude Include="hitable.h" />
+    <ClInclude Include="hitable_list.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="sphere.h" />
     <ClInclude Include="stb_image.h" />
@@ -123,7 +125,7 @@
     <ClInclude Include="vec3.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="5 Surface normals and multiple objects.cpp" />
+    <ClCompile Include="7 Diffuse Materials.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
