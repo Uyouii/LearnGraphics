@@ -127,7 +127,7 @@
     <ClInclude Include="vec3.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="9 Dielectrics.cpp" />
+    <ClCompile Include="10 Positionable camera.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
