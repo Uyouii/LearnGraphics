@@ -47,7 +47,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="10 Positionable camera.cpp">
+    <ClCompile Include="12 Final.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
