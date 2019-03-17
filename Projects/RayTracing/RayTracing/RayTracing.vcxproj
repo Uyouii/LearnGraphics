@@ -118,14 +118,16 @@
     <ClInclude Include="camera.h" />
     <ClInclude Include="hitable.h" />
     <ClInclude Include="hitable_list.h" />
+    <ClInclude Include="material.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="sphere.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stb_image_write.h" />
+    <ClInclude Include="tools.h" />
     <ClInclude Include="vec3.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="7 Diffuse Materials.cpp" />
+    <ClCompile Include="9 Dielectrics.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
