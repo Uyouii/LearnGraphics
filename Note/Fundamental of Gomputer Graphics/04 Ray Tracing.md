@@ -102,4 +102,29 @@ ray.origin <-- E + u U + v V
 
 It’s very simple to make an oblique parallel view: just allow the image plane normal **w** to be speciﬁed separately from the view direction **d**. The procedure is then exactly the same, but with **d** substituted for − **w**. Of course w is still used to construct **u** and **v**.
 
-![](D:\projects\Learn OpenGL\Real Time Rending Image\Ray generation using the camera frame.JPG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/Ray%20generation%20using%20the%20camera%20frame.JPG)
+
+### Perspective Views
+
+For a perspective view, all the rays have the same origin, at the viewpoint; it is the directions that are different for each pixel.
+
+The image plane is no longer positioned at **e**, but rather some distance d in front of **e**; this distance is the image ***plane distance***, often loosely called the ***focal length***, because choosing *d* plays the same role as choosing focal length in a real camera.
+
+The direction of each ray is deﬁned by the viewpoint and the position of the pixel on the image plane.
+
+ resulting procedure：
+
+```
+compute u and v using (4.1)
+ray.direction <-- d W + u U + v V
+ray.origin <-- E
+```
+
+As with parallel projection, oblique perspective views can be achieved by specifying the image plane normal separately from the projection direction, then replacing − d**w** with d**d** in the expression for the ray direction.
+
+
+
+
+
+
+

@@ -36,8 +36,8 @@ hitable *random_scene() {
 	hitable **list = new hitable *[n + 1];
 	list[0] = new sphere(vec3(0, -1000, 0), 1000, new lambertian(vec3(0.5, 0.5, 0.5)));
 	int i = 1;
-	for (int a = -10; a < 10; a+=2) {
-		for (int b = -10; b < 10; b+=2) {
+	for (int a = -20; a < 20; a+=2) {
+		for (int b = -20; b < 20; b+=2) {
 			float choose_mat = RANDOM_NUM;
 			vec3 center(a + 1.8 * RANDOM_NUM, littleRidus, b + 1.8 * RANDOM_NUM);
 			if ((center - vec3(4, littleRidus, 0)).length() > 1.8) {
@@ -64,7 +64,7 @@ hitable *random_scene() {
 }
 
 int main() {
-	int nx = 400, ny = 200, n = 3, ns = 100;
+	int nx = 800, ny = 400, n = 3, ns = 100;
 	char* data = new char[nx * ny * n];
 
 	srand((unsigned)time(NULL));
