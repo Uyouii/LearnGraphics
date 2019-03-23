@@ -122,9 +122,45 @@ ray.origin <-- E
 
 As with parallel projection, oblique perspective views can be achieved by specifying the image plane normal separately from the projection direction, then replacing − d**w** with d**d** in the expression for the ray direction.
 
+## Ray-Object Intersection
 
+### Ray-Sphere Intersection
 
+Intersection points occur when points on the ray satisfy the implicit equation, so we solve the equation:
+$$
+f(\mathbf{p}(t)) = 0 \space \space or \space \space f(e + t\mathbf{d}) = 0
+$$
+A sphere with center c = (x c , y c , z c ) and radius R can be represented by the implicit equation
+$$
+(x - x_c)^2 + (y - y_c)^2 +(z - z_c)^2 - R^2 = 0
+$$
+We can write this same equation in vector form:
+$$
+(\mathbf{p} - \mathbf{c}) . (\mathbf{p} - \mathbf{c}) - R^2 = 0
+$$
+Any point p that satisﬁes this equation is on the sphere. If we plug points on the ray **p**(t) = **e** + t**d** into this equation, 
+$$
+(\mathbf{e} + t\mathbf{d}- \mathbf{c}) . (\mathbf{e} + t\mathbf{d} - \mathbf{c}) - R^2 = 0
+$$
+Rearranging terms yields:
+$$
+(\mathbf{d}.\mathbf{d})t^2 + 2\mathbf{d}.(\mathbf{e} - \mathbf{c})t + (\mathbf{e} - \mathbf{c})(\mathbf{e} - \mathbf{c}) - R^2 = 0
+$$
+ a classic quadratic equation in t, meaning it has the form
+$$
+AT^2 + Bt + C = 0
+$$
+The term under the square root sign in the quadratic solution, $B^2 − 4AC$, is called the ***discriminant*** and tells us how many real solutions there are.
 
+- If the discriminant is negative, its square root is imaginary and the line and sphere do not intersect.
+-  If the discriminant is positive, there are two solutions: one solution where the ray enter the sphere and one where it leaves.
+- If the discriminant is zero, the ray grazes the sphere, touching it at exactly one point.
 
+Plugging in the actual terms for the sphere and canceling a factor of two, we get:
+$$
+t = \frac{-\mathbf{d}.(\mathbf{e} - \mathbf{c})\pm \sqrt{(\mathbf{d}.(\mathbf{e} - \mathbf{c})^2) - (\mathbf{d}.\mathbf{d})((\mathbf{e} - \mathbf{c}).(\mathbf{e} - \mathbf{c}) - R^2)}}{(\mathbf{d}.\mathbf{d})}
+$$
+the normal vector at point p is given by the gradient n = 2(**p** − **c**). The unit normal is (**p** − **c**)/R.
 
+### Ray-Triangle Intersection
 
