@@ -102,4 +102,65 @@ ray.origin <-- E + u U + v V
 
 It’s very simple to make an oblique parallel view: just allow the image plane normal **w** to be speciﬁed separately from the view direction **d**. The procedure is then exactly the same, but with **d** substituted for − **w**. Of course w is still used to construct **u** and **v**.
 
-![](D:\projects\Learn OpenGL\Real Time Rending Image\Ray generation using the camera frame.JPG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/Ray%20generation%20using%20the%20camera%20frame.JPG)
+
+### Perspective Views
+
+For a perspective view, all the rays have the same origin, at the viewpoint; it is the directions that are different for each pixel.
+
+The image plane is no longer positioned at **e**, but rather some distance d in front of **e**; this distance is the image ***plane distance***, often loosely called the ***focal length***, because choosing *d* plays the same role as choosing focal length in a real camera.
+
+The direction of each ray is deﬁned by the viewpoint and the position of the pixel on the image plane.
+
+ resulting procedure：
+
+```
+compute u and v using (4.1)
+ray.direction <-- d W + u U + v V
+ray.origin <-- E
+```
+
+As with parallel projection, oblique perspective views can be achieved by specifying the image plane normal separately from the projection direction, then replacing − d**w** with d**d** in the expression for the ray direction.
+
+## Ray-Object Intersection
+
+### Ray-Sphere Intersection
+
+Intersection points occur when points on the ray satisfy the implicit equation, so we solve the equation:
+$$
+f(\mathbf{p}(t)) = 0 \space \space or \space \space f(e + t\mathbf{d}) = 0
+$$
+A sphere with center c = (x c , y c , z c ) and radius R can be represented by the implicit equation
+$$
+(x - x_c)^2 + (y - y_c)^2 +(z - z_c)^2 - R^2 = 0
+$$
+We can write this same equation in vector form:
+$$
+(\mathbf{p} - \mathbf{c}) . (\mathbf{p} - \mathbf{c}) - R^2 = 0
+$$
+Any point p that satisﬁes this equation is on the sphere. If we plug points on the ray **p**(t) = **e** + t**d** into this equation, 
+$$
+(\mathbf{e} + t\mathbf{d}- \mathbf{c}) . (\mathbf{e} + t\mathbf{d} - \mathbf{c}) - R^2 = 0
+$$
+Rearranging terms yields:
+$$
+(\mathbf{d}.\mathbf{d})t^2 + 2\mathbf{d}.(\mathbf{e} - \mathbf{c})t + (\mathbf{e} - \mathbf{c})(\mathbf{e} - \mathbf{c}) - R^2 = 0
+$$
+ a classic quadratic equation in t, meaning it has the form
+$$
+AT^2 + Bt + C = 0
+$$
+The term under the square root sign in the quadratic solution, $B^2 − 4AC$, is called the ***discriminant*** and tells us how many real solutions there are.
+
+- If the discriminant is negative, its square root is imaginary and the line and sphere do not intersect.
+-  If the discriminant is positive, there are two solutions: one solution where the ray enter the sphere and one where it leaves.
+- If the discriminant is zero, the ray grazes the sphere, touching it at exactly one point.
+
+Plugging in the actual terms for the sphere and canceling a factor of two, we get:
+$$
+t = \frac{-\mathbf{d}.(\mathbf{e} - \mathbf{c})\pm \sqrt{(\mathbf{d}.(\mathbf{e} - \mathbf{c})^2) - (\mathbf{d}.\mathbf{d})((\mathbf{e} - \mathbf{c}).(\mathbf{e} - \mathbf{c}) - R^2)}}{(\mathbf{d}.\mathbf{d})}
+$$
+the normal vector at point p is given by the gradient n = 2(**p** − **c**). The unit normal is (**p** − **c**)/R.
+
+### Ray-Triangle Intersection
+
