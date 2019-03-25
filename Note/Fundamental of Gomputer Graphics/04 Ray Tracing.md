@@ -164,3 +164,12 @@ the normal vector at point p is given by the gradient n = 2(**p** − **c**). Th
 
 ### Ray-Triangle Intersection
 
+We will present the form that uses **barycentric coordinates**（重心坐标系） for the parametric plane containing the triangle, because it requires no long-term storage other than the vertices of the triangle
+$$
+\left.\begin{matrix}
+x_e + tx_d = f(u,v)\\ 
+y_e + ty_d = g(u,v)\\ 
+z_e + tz_d = h(u,v)\\
+\end{matrix}\right\} or,
+\mathbf{e} + t\mathbf{d} = \mathbf{f}(u,v)
+$$
