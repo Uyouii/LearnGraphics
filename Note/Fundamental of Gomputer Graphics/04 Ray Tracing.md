@@ -173,3 +173,12 @@ z_e + tz_d = h(u,v)\\
 \end{matrix}\right\} or,
 \mathbf{e} + t\mathbf{d} = \mathbf{f}(u,v)
 $$
+
+![](D:\projects\Learn OpenGL\Real Time Rending Image\The ray hits the plane containing the triangle at point p.JPG)
+
+> the ray hits the plane containing the triangle at point p
+
+the intersection will occur when:
+$$
+\mathbf{e} + t\mathbf{d} = \mathbf{a} + \beta(\mathbf{b} - \mathbf{a}) + \gamma(\mathbf{c} - \mathbf{a})
+$$
