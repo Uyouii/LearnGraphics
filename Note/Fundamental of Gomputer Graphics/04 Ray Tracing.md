@@ -174,7 +174,7 @@ z_e + tz_d = h(u,v)\\
 \mathbf{e} + t\mathbf{d} = \mathbf{f}(u,v)
 $$
 
-![](D:\projects\Learn OpenGL\Real Time Rending Image\The ray hits the plane containing the triangle at point p.JPG)
+![](https://github.com/Uyouii/LearnGraphics/raw/master/Real%20Time%20Rending%20Image/The%20ray%20hits%20the%20plane%20containing%20the%20triangle%20at%20point%20p.JPG)
 
 > the ray hits the plane containing the triangle at point p
 
@@ -182,3 +182,32 @@ the intersection will occur when:
 $$
 \mathbf{e} + t\mathbf{d} = \mathbf{a} + \beta(\mathbf{b} - \mathbf{a}) + \gamma(\mathbf{c} - \mathbf{a})
 $$
+
+from section 2.7.2, we know that the intersection is inside the triangle if and only if β > 0, γ > 0 and β + γ < 1.
+
+expand the equation from its vector form into three equations for the three coordinates:
+$$
+x_e + tx_d = x_a + \beta(x_b - x_a) + \gamma(x_c - x_a) \\
+y_e + ty_d = y_a + \beta(y_b - y_a) + \gamma(y_c - y_a) \\
+z_e + tz_d = z_a + \beta(z_b - z_a) + \gamma(z_c - z_a) \\
+$$
+......
+
+The algorithm for the ray-triangle intersection for which we need the linear solution can have some conditions for early termination. Thus, the function should look something like:
+
+```c
+boolean raytri (ray r, vector3 a, vector3 b, vector3 c,interval [t0 , t1 ])
+compute t
+if (t < t0 ) or (t > t1 ) then
+	return false
+compute γ
+if (γ < 0) or (γ > 1) then
+	return false
+compute β
+if (β < 0) or (β > 1 − γ) then
+	return false
+return true
+```
+
+### Ray-Polygon(多边形) Intersection
+
