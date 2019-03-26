@@ -211,3 +211,68 @@ return true
 
 ### Ray-Polygon(多边形) Intersection
 
+Given a planar polygon with m vertices $\mathbf{p_1}$ through $mathbf{p_m}$ and surface normal **n**,w e ﬁrst compute the intersection points between the ray **e** + t**d** and the plane containing the polygon with implicit equation
+$$
+(\mathbf{p} - \mathbf{p_1}).\mathbf{n} = 0
+$$
+We do this by setting **p** = **e** + t**d** and solving for t to get
+$$
+t = \frac{(\mathbf{p}_1 - \mathbf{e}). \mathbf{n}}{\mathbf{d}. \mathbf{n}}
+$$
+This allows us to compute **p**. If **p** is inside the polygon, then the ray hits it; otherwise, it does not.
+
+We can answer the question of whether **p** is inside the polygon by projecting the point and polygon vertices to the *xy* plane and answering it there. 
+
+The easiest way to do this is to send any 2D ray out from **p** and to count the number of intersections between that ray and the boundary of the polygon. If the number of the intersection is odd, then the point is inside the polygon; otherwise it is not.
+
+To make computation simple, the 2D ray may as well propagate along the x-axis:
+$$
+\begin{bmatrix}
+x\\ 
+y
+\end{bmatrix} = 
+\begin{bmatrix}
+x_p\\ 
+y_p
+\end{bmatrix} + s
+\begin{bmatrix}
+1\\ 
+0
+\end{bmatrix}
+$$
+A problem arises, however, for polygons whose projection into the xy plane is a line. To get around this, we can choose among the *xy, yz, or zx* planes for whichever is best. 
+
+If we implement our points to allow an indexing operation, e.g., **p**(0) = x p then this can be accomplished as follows:
+
+```c
+if (abs(zn ) > abs(xn )) and (abs(zn ) > abs(yn )) then
+	index0 = 0
+	index1 = 1
+else if (abs(yn ) > abs (xn )) then
+	index0 = 0
+	index1 = 2
+else
+	index0 = 1
+	index1 = 2
+```
+
+Now, all computations can use p(index0) rather than $x_p$ , and so on.
+
+Another approach to polygons, one that is often used in practice, is to replace them by several triangles.
+
+### Intersecting a Group of Objects
+
+ A simple way to implement this is to think of a group of objects as itself being another type of object
+
+To intersect a ray with a group, you simply intersect the ray with the objects in the group and return the intersection with the smallest t value. The following code tests for hits in the interval t ∈ [ t0, t1 ]:
+
+```c
+hit = false
+for each object o in the group do
+	if ( o is hit at ray parameter t and t ∈ [ t0, t1 ]) then
+		hit = true
+		hitobject = o
+		t1 = t
+	return hit
+```
+
