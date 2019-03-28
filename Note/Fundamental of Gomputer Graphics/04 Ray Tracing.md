@@ -276,3 +276,11 @@ for each object o in the group do
 	return hit
 ```
 
+## Shading
+
+Most shading models, one way or another, are designed to capture the process of light reﬂection, whereby surfaces are illuminated by light sources and reﬂect part of the light to the camera. 
+
+### Lambertian Shading
+
+
+
