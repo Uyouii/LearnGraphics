@@ -282,5 +282,54 @@ Most shading models, one way or another, are designed to capture the process of 
 
 ### Lambertian Shading
 
+the amount of energy from a light source that falls on an area of surface depends on the angle of the surface to the light.
 
+-  A surface facing directly toward the light receives maximum illumination; 
+- a surface tangent to the light direction (or facing away from the light) receives no illumination; 
+- in between the illumination is proportional to the cosine of the angle θ between the surface normal and the light source 
+
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\Geometry for Lambertian shading.JPG)
+
+This leads to the ***Lambertian shading model***:
+$$
+L = k_dImax(0, \mathbf{n}.\mathbf{l})
+$$
+
+- L is the pixel color
+
+- $k_d$ is the ***diffuse coefficient*** or the surface color
+
+- I is the intensity(强度) of the light source
+
+Because **n** and **l** are unit vectors, we can use **n · l** as a convenient shorthand for cos θ
+
+This equation applies separately to the three color channels
+
+### Blinn-Phong Shading
+
+Lambertian shading is ***view independent***: the color of a surface does not depend on the direction from which you look.
+
+Many real surfaces show some degree of shininess, producing highlights, or ***specular reﬂections***(镜面反射), that appear to move around as the viewpoint changes.
+
+many shading models add a ***specular component*** to Lambertian shading; the Lambertian part is then the
+***diffuse component***(漫反射成分 )
+
+The idea is to produce reﬂection that is at its brightest when **v** and **l** are symmetrically(对称的) positioned across the surface normal, which is when mirror reﬂection would occur;the reﬂection then decreases smoothly as the vectors move away from a mirror conﬁguration.
+
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\Geometry for Blinn-Phong shading.JPG)
+
+We can tell how close we are to a mirror conﬁguration by comparing the half vector **h** to the surface normal.
+
+If the half vector is near the surface normal, the specular component should be bright; if it is far away it should be dim.
+
+This result is achieved by computing the dot product between **h** and **n**, then taking the result to a power p > 1 to make it decrease faster.
+
+the Blinn-Phong shading model is as follows:
+$$
+\mathbf{h} = \frac{\mathbf{v} + \mathbf{l}}{\left \| \mathbf{v} + \mathbf{l} \right \|} \\
+L = k_dImax(0,\mathbf{n}.\mathbf{l}) + k_sImax(0,\mathbf{n}.\mathbf{h})^p
+$$
+where $k_s$ is the **specular coefficient**, or the specular color, of the surface
+
+### Ambient Shading
 
