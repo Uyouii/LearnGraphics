@@ -333,3 +333,21 @@ where $k_s$ is the **specular coefficient**, or the specular color, of the surfa
 
 ### Ambient Shading
 
+A crude but useful heuristic to avoid black shadows  is to add a constant component to the shading model, one whose contribution to the pixel color depends only on the object hit, with no dependence on the surface geometry at all. This is known as ***ambient shading***—it is as if surfaces were illuminated by “ambient” light that comes equally from everywhere.
+
+Together with the rest of the Blinn-Phong model, ambient shading completes the full version of a simple and useful shading model:
+$$
+L = k_aI_a + k_dImax(0, \mathbf{n}.\mathbf{l}) + k_sImax(0,\mathbf{n}.\mathbf{h})^n
+$$
+where $k_a$ is the surface’s ambient coefﬁcient, or “ambient color,” and $I_a$ is the ambient light intensity
+
+### Multiple Point Lights
+
+A very useful property of light is ***superposition*** -- the effect caused by more than on light source is simply the sum of the effects of the light sources individually.
+
+our simple shading model can easily be extended to handle N light sources:
+$$
+L = k_aI_a + \sum_{i = 1}^{N}[ k_dI_imax(0, \mathbf{n}.\mathbf{l}_i) + k_sI_imax(0,\mathbf{n}.\mathbf{h}_i)^p ]
+$$
+where $\mathit{I}_i$ , $\mathbf{l}_i$ , and $\mathbf{h}_i$ are the intensity, direction, and half vector of the $i^{th}$ light source.
+
