@@ -351,3 +351,5 @@ L = k_aI_a + \sum_{i = 1}^{N}[ k_dI_imax(0, \mathbf{n}.\mathbf{l}_i) + k_sI_imax
 $$
 where $\mathit{I}_i$ , $\mathbf{l}_i$ , and $\mathbf{h}_i$ are the intensity, direction, and half vector of the $i^{th}$ light source.
 
+## A Ray-Tracing Problem
+
