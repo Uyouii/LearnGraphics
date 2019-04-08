@@ -363,3 +363,5 @@ for each pixel do
 		set pixel color to background color
 ```
 
+ ## Shadows
+
