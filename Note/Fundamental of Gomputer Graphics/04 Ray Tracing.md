@@ -353,3 +353,13 @@ where $\mathit{I}_i$ , $\mathbf{l}_i$ , and $\mathbf{h}_i$ are the intensity, di
 
 ## A Ray-Tracing Problem
 
+```c
+for each pixel do
+	compute viewing ray
+	if( ray hits an object with t ∈ [0, ∞)) then
+		compute n
+		evaluate shading model and set pixel to that color
+	else
+		set pixel color to background color
+```
+
