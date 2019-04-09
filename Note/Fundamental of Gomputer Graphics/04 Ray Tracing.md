@@ -365,3 +365,37 @@ for each pixel do
 
  ## Shadows
 
+The rays that determine in or out of shadow are called ***shadow rays*** to distinguish them from viewing rays.
+
+To get the algorithm for shading, we add an if statement to determine whether the point is in shadow.
+
+In a naive implementation, the shadow ray will check for t ∈ [0, ∞ ), but because of numerical imprecision, this can result in an intersection with the surface on which p lies. Instead, the usual adjustment to avoid that problem is to test for t ∈ [	 $\epsilon $, ∞ ) where $\epsilon $ is some small positive constant
+
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\By testing in the interval starting at e, we avoid numerical imprecision causing the ray to hit the surface p is on.JPG)
+
+> By testing in the interval starting at e, we avoid numerical imprecision causing the ray to hit the surface p is on
+
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\implement shadow rays for Phong lighting.JPG)
+
+> E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\implement shadow rays for Phong lighting.JPG
+
+
+
+## Ideal Specular Reflection
+
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\When looking into a perfect mirror.JPG)
+
+> When looking into a perfect mirror, the viewer looking in direction **d** will see whatever the viewer “below” the surface would see in direction **r**.
+
+$$
+\mathbf{r} = \mathbf{d} - 2(\mathbf{d}.\mathbf{n})\mathbf{n}
+$$
+
+In the real world, some energy is lost when the light reﬂects from the surface, and this loss can be different for different colors. This can be implemented by adding a recursive call in ***raycolor***:
+$$
+color c = c + k_mraycolor(\mathbf{p} + s\mathbf{r}, \epsilon, \infty)
+$$
+where $k_m$ (for “mirror reﬂection”) is the specular RGB color. 
+
+The problem with the recursive call above is that it may never terminate. For example, if a ray starts inside a room, it will bounce forever. This can be ﬁxed by adding a maximum recursion depth.
+
