@@ -117,3 +117,90 @@ $$
 
 ### Vector Operations in Matrix Form
 
+If we consider the result of the dot product as a 1 × 1 matrix, it can be written
+$$
+\mathbf{a}.\mathbf{b} = \mathbf{a}^T\mathbf{b}
+$$
+For example, if we take two 3D vectors we get
+$$
+[x_a \space y_a \space z_a]
+\begin{bmatrix}
+x_b \\ 
+y_b \\ 
+z_b \\ 
+\end{bmatrix} = 
+[x_ax_b + y_ay_b + z_az_b]
+$$
+we can think of a 3 × 3 matrix as a collection of three 3D vectors in two ways: either it is made up of three column vectors side-by-side, or it is made up of three row vectors stacked up. 
+
+For instance, the result of a matrix-vector multiplication $\mathbf{y = Ax}$ can be interpreted as a vector whose entries are the dot products of **x** with the rows of **A**. Naming these row vectors $\mathbf{r}_i$ , we have
+$$
+\begin{bmatrix}
+| \\ 
+\mathbf{y} \\ 
+| \\ 
+\end{bmatrix} = 
+\begin{bmatrix}
+- & \mathbf{r}_1 & - \\ 
+- & \mathbf{r}_2 & - \\ 
+- & \mathbf{r}_3 & - \\ 
+\end{bmatrix} 
+\begin{bmatrix}
+| \\ 
+\mathbf{x} \\ 
+| \\ 
+\end{bmatrix} \\
+$$
+
+$$
+y_i = \mathbf{r}_i. \mathbf{x}
+$$
+
+Alternatively, we can think of the same product as a sum of the three columns $\mathbf{c}_i$ of A, weighted by the entries of **x**:
+$$
+\begin{bmatrix}
+| \\ 
+\mathbf{y} \\ 
+| \\ 
+\end{bmatrix} = 
+\begin{bmatrix}
+| & | & | \\ 
+ \mathbf{c}_1 & \mathbf{c}_2 &  \mathbf{c}_3 \\ 
+| & | & | \\ 
+\end{bmatrix} 
+\begin{bmatrix}
+x_1 \\ 
+x_2 \\ 
+x_3 \\ 
+\end{bmatrix} \\
+$$
+
+$$
+\mathbf{y} = x_1\mathbf{c}_1 + x_2\mathbf{c}_2 + x_3\mathbf{c}_3
+$$
+
+### Special Types of Matrices
+
+The identity matrix is an example of a ***diagonal matrix***(对角矩阵), where all nonzero elements occur along the diagonal.
+
+The identity matrix also has the property that it is the same as its transpose. Such matrices are called ***symmetric***(对称性).
+
+The identity matrix is also an ***orthogonal*** matrix(正交矩阵), because each of its columns considered as a vector has length 1 and the columns are orthogonal to one another.The same is true of the rows.The determinant of any orthogonal matrix is either +1 or − 1.
+
+A very useful property of orthogonal matrices is that they are nearly their own inverses.
+
+Multiplying an orthogonal matrix by its transpose results in the identity,
+$R^TR = I = RR^T $ for orthogonal R
+
+## Computing With Matrices and Determinants
+
+If we have 2D vectors r and s, we denote the determinant |**rs**|; this value is the signed area of the parallelogram formed by the vectors. 
+
+![](E:\projects\Uyouii git\LearnOpenGL\Real Time Rending Image\The 2D determinant in Equation 5.8 is the area of the parallelogram formed by the 2D vectors..JPG)
+
+> The 2D determinant in Equation 5.8 is the area of the parallelogram formed by the 2D vectors.
+
+Suppose we have two 2D vectors with Cartesian coordinates (a, b) and (A, B)
+$$
+
+$$
